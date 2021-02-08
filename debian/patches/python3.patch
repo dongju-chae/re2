@@ -1,0 +1,21 @@
+From: Stefano Rivera <stefanor@debian.org>
+Date: Thu, 8 Aug 2019 12:58:10 -0300
+Subject: Build unicode tables with Python 3
+
+---
+ Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Makefile b/Makefile
+index 98e49c9..15d3d6c 100644
+--- a/Makefile
++++ b/Makefile
+@@ -245,7 +245,7 @@ re2/perl_groups.cc: re2/make_perl_groups.pl
+ 
+ .PRECIOUS: re2/unicode_%.cc
+ re2/unicode_%.cc: re2/make_unicode_%.py
+-	python $< > $@
++	python3 $< > $@
+ endif
+ 
+ .PHONY: distclean
